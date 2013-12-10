@@ -84,8 +84,8 @@
 			children = (
 				271F245E1854A34F0024E200 /* main.m */,
 				271F24621854A34F0024E200 /* LeagueOfObjectOriented.1 */,
-				271F24601854A34F0024E200 /* Supporting Files */,
 				271F24691854F9B30024E200 /* Jogador.h */,
+				271F24601854A34F0024E200 /* Supporting Files */,
 				271F246A1854F9B30024E200 /* Jogador.m */,
 				271F246C1854FBB50024E200 /* Arma.h */,
 				271F246D1854FBB50024E200 /* Arma.m */,
@@ -269,6 +269,7 @@
 				271F24681854A34F0024E200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
