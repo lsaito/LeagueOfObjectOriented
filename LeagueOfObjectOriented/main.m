@@ -17,8 +17,12 @@ int main(int argc, const char * argv[])
         NSLog(@"Hello, World!");
         
         NSLog(@"Teste do GitHub, feito por Victor Luni em 10/12/2013");
+
         NSLog(@"UU LEo");
         
+
+        NSLog(@"Thales");
+
 
         NSLog(@"Oi by Lucas");
         NSLog(@"Oi by Rafael");
