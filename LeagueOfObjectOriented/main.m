@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
         // insert code here...
         NSLog(@"Hello, World!");
         
-        
+        NSLog(@"Teste do GitHub, feito por Victor Luni em 10/12/2013");
         
         
         
