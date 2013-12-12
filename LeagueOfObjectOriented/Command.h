@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 @class Jogador;
-
+@class CommandAttack;
 @interface Command : NSObject {
 }
 @property (nonatomic,strong)NSMutableArray *historico;
 +(Command *)sharedCommand ;
--(void)adicionarAtaque:(Jogador *)j andInimigo:(Jogador *)j2;
+-(void)adicionarAtaque:(CommandAttack *)at;
 @end

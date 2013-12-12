@@ -8,6 +8,7 @@
 
 #import "Command.h"
 #import "Jogador.h"
+#import "CommandAttack.h"
 @implementation Command
 -(id)init {
     if (self = [super init]) {
@@ -27,9 +28,8 @@
         });
     } return c;
 }
--(void) adicionarAtaque:(Jogador *)j andInimigo:(Jogador *)j2 {
-    NSString *s = [NSString stringWithFormat:@"%@ atacou %@", j.nome, j2.nome];
-    [self.historico addObject:s];
+-(void)adicionarAtaque:(CommandAttack *)at {
+    [self.historico addObject:at];
 }
 -(void)usarMetodo:(NSString *)s {
     

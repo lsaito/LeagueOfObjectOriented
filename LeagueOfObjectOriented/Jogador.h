@@ -11,6 +11,7 @@
 #import "Command.h"
 
 @class Weapon;
+@class CommandAttack;
 
 
 @interface Jogador : NSObject

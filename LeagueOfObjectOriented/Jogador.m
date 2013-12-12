@@ -7,7 +7,7 @@
 //
 
 #import "Jogador.h"
-
+#import "CommandAttack.h"
 @implementation Jogador
 -(id)initWithNome:(NSString *)__nome {
     if (self = [super init]) {
@@ -37,9 +37,9 @@
 }
 
 -(void)atacar:(Jogador *)inimigo {
-    [[Command sharedCommand] adicionarAtaque:self andInimigo:inimigo];
+    CommandAttack *at = [[CommandAttack alloc] initJogador:self andInimigo:inimigo];
+    [at addToCommand];
     
-    inimigo.hp = [self.primario calculateStrengthAttack:inimigo];
 }
 -(void)defender {
     
