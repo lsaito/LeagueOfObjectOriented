@@ -31,7 +31,7 @@
 
 #pragma mark - Construtores
 
-- (id) initWithName : (NSString *)_name andpowerAttack : (int)_powerAttack;
+- (id) initWithName : (NSString *)_name price : (double)_price element : (int)_element powerAttack : (int)_powerAttack precisionAttack : (int)_precisionAttack wear : (int)_wear reach : (int)_reach level : (int)_level;
 
 #pragma mark - Métodos
 
