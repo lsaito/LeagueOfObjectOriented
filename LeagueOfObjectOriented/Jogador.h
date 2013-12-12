@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Weapon.h"
+@class Weapon;
 
 
 @interface Jogador : NSObject
 @property (nonatomic,strong) NSString *nome;
-@property (nonatomic,strong) Weapon *primario;
-@property (nonatomic,strong) Weapon *secondario;
+@property (nonatomic) Weapon *primario;
+@property (nonatomic) Weapon *secondario;
 @property (nonatomic) int level;
 @property (nonatomic) int hp;
 @property (nonatomic) int forca;

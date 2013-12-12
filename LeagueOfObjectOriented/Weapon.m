@@ -9,7 +9,7 @@
 #import <time.h>
 #import <stdlib.h>
 #import "Weapon.h"
-#import "Character.h"
+#import "Jogador.h"
 
 @implementation Weapon
 
@@ -64,7 +64,7 @@ static const int AIR = 3;
     }
     return breaking;
 }
-- (double) calculateStrengthAttack : (Character *) character{
+- (double) calculateStrengthAttack : (Jogador *) character{
     return 0.0;
 }
 #pragma mark - Getter e Setter

@@ -9,7 +9,7 @@
 #import <foundation/Foundation.h>
 #import "Jogador.h"
 #import "Terreno.h"
-
+@class Jogador;
 @interface Weapon : NSObject{
     NSString *name;
     double price;
