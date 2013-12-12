@@ -34,5 +34,5 @@ typedef enum :int {
 
 -(void)GeradorDeInimigos;
 -(void)loopGame;
-
++(Jogo *)sharedJogoWIthJogador:(Jogador *)j;
 @end

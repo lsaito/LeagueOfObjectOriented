@@ -9,6 +9,18 @@
 #import "Jogo.h"
 
 @implementation Jogo
+
++(Jogo *)sharedJogoWIthJogador:(Jogador *)j {
+    static Jogo *jog = NULL;
+    if (!jog) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            jog = [[Jogo alloc] initWithJogador:j];
+        });
+    }
+    return jog;
+}
+
 -(id)initWithJogador:(Jogador *)__p1{
     self = [super init];
     
