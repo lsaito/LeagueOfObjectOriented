@@ -1,5 +1,5 @@
 //
-//  Arma.m
+//  Espada.h
 //  LeagueOfOrientedObject
 //
 //  Created by THALES AUGUSTO on 11/19/13.
@@ -7,10 +7,10 @@
 //
 
 #import "Arma.h"
-#import "Jogador.h"
 
-@implementation Arma: NSObject
-
-
-
+@interface Espada : Arma{
+    int desgaste;
+    int forcaEsp;
+}
+-(double)calcularForcaDeAtaque:(Jogador *)jogador contagem:(int)cont;
 @end

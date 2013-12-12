@@ -1,30 +1,34 @@
 //
 //  Jogador.h
-//  LeagueOfObjectOriented
+//  LeagueOfOrientedObject
 //
-//  Created by Vinicius Miana on 12/8/13.
-//  Copyright (c) 2013 Vinicius Miana. All rights reserved.
+//  Created by THALES AUGUSTO on 11/19/13.
+//  Copyright (c) 2013 THALES AUGUSTO. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Arma.h"
+@class Arma;
 
-#define ELFO 0
-#define HUMANO 1
-#define ORC 2
-#define ANAO 3
-
-@interface Jogador : NSObject {
-    
+@interface Jogador : NSObject{
+    int elfo;
+    int orc;
+    int humano;
+    int anao;
+    NSString *nome;
+    int raca;
+    float vida;
+    int forcaEscudo;
+    Arma *armaPrimaria;
+    Arma *armaSecundaria;
     
 }
-@property (nonatomic) int raca;
-@property (nonatomic) float vida;
-@property (nonatomic) int forcaEscudo;
-@property (nonatomic) Arma* armaPrimaria;
-@property (nonatomic) Arma* armaSecundaria;
+@property int raca;
+@property float vida;
+-(id)QuaisArm;
+-(id)Qualraca : (int)racam;
+-(float)ataque: (Jogador *)player contagem: (int)cont;
+-(float)sofreAtaque: (Arma *)armaUsada forcaAgora:(double)forca contagem:(int)cont;
+-(int)defesa: (int)cont;
 
--(float)ataque:(Jogador*)adversario;
--(float)sofreAtaque:(Arma*)armaUsada forca:(double) forca;
 
 @end

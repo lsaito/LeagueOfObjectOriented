@@ -1,5 +1,5 @@
 //
-//  Arma.m
+//  Magia.h
 //  LeagueOfOrientedObject
 //
 //  Created by THALES AUGUSTO on 11/19/13.
@@ -9,8 +9,10 @@
 #import "Arma.h"
 #import "Jogador.h"
 
-@implementation Arma: NSObject
+@interface Magia : Arma{
+    int habilidade;
+}
 
-
+-(double)calcularForcaDeAtaque:(Jogador *)jogador contagem:(int)cont;
 
 @end

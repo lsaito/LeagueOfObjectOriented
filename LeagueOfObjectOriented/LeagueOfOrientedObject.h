@@ -1,25 +1,21 @@
 //
 //  LeagueOfOrientedObject.h
-//  LeagueOfObjectOriented
+//  LeagueOfOrientedObject
 //
-//  Created by Vinicius Miana on 12/8/13.
-//  Copyright (c) 2013 Vinicius Miana. All rights reserved.
+//  Created by THALES AUGUSTO on 11/19/13.
+//  Copyright (c) 2013 THALES AUGUSTO. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "Jogador.h"
 
-@interface LeagueOfOrientedObject : NSObject {
+@interface LeagueOfOrientedObject : Jogador {
+    Jogador *player1;
+    Jogador *player2;
     
 }
-@property Jogador* player1;
-@property Jogador* player2;
 
 -(void)jogar;
 
--(Boolean)verificarVencedor;
-
--(Jogador*)vencedor;
-
-
+-(void)vencedor;
 @end
