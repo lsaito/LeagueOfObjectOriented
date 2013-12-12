@@ -26,6 +26,7 @@
     
     if (self) {
         self.p1 = __p1;
+        [self GeradorDeInimigos];
     }
     
     return self;
@@ -34,7 +35,7 @@
 -(void)loopGame {
     int r = arc4random()%5;
     self.t = [[Terreno alloc]initWithType:r];
-    [self GeradorDeInimigos];
+    
     int randomP1 = arc4random()%2;
     while (self.p1.hp > 0) {
         if (randomP1 == 0) {
@@ -62,6 +63,7 @@
 
 
 -(void)escolherFuncao:(Jogador *)j1 andInimigo:(Jogador *)inimigo {
+    NSLog(@"Minha Vida: %d e Inimigo:%d", j1.hp, inimigo.hp);
     NSLog(@"%@ - Escolha uma opção: \n 0 - Atacar \n 1 - Recuperar \n 2 - Trocar Arma \n 3 - Fugir" , j1.nome);
     Funcao op = 0;
     scanf("%d", &op);
