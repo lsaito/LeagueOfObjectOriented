@@ -12,5 +12,7 @@
 
 - (BOOL) verifyArrow;
 //- (double) calculateStrengthAttack : (Character *) character;
+- (double) calculateStrengthAttack : (Jogador *) character with: (Terreno *) terreno;
+
 
 @end

@@ -13,15 +13,18 @@
 #import "Elfo.h"
 #import "Orc.h"
 #import "Anao.h"
+#import "Command.h"
 
 #import <objc/runtime.h>
 
 @interface Jogo : NSObject
+
 @property (nonatomic,strong) Jogador *p1;
 @property (nonatomic,strong) Jogador *Inimigo;
 @property (nonatomic,strong) Terreno *t;
 
 -(id)initWithJogador:(Jogador *)__p1;
++(Jogo *)sharedJogo:(Jogador *)jog;
 
 typedef enum :int {
     FuncaoAtacar = 0,
@@ -29,8 +32,6 @@ typedef enum :int {
     FuncaoTrocarArma = 2,
     FuncaoFugir = 3
 }Funcao;
-
-
 
 -(void)GeradorDeInimigos;
 -(void)loopGame;
