@@ -1,139 +1,67 @@
 //
 //  Jogador.m
-//  LeagueOfOrientedObject
+//  League of oriented objective
 //
-//  Created by THALES AUGUSTO on 11/19/13.
-//  Copyright (c) 2013 THALES AUGUSTO. All rights reserved.
+//  Created by IGOR HENRIQUE on 11/19/13.
+//  Copyright (c) 2013 IGOR HENRIQUE. All rights reserved.
 //
 
 #import "Jogador.h"
-#import "Espada.h"
-#import "ArcoFlecha.h"
-#import "Magia.h"
-#import "Machado.h"
-#import <stdlib.h>
-
 @implementation Jogador
+-(id)initWithNome:(NSString *)__nome {
+    if (self = [super init]) {
+        self.exp = 0;
+        self.nome = __nome;
+        self.expMax = 100;
+        self.level = 1;
+        self.dinheiro = 0;
+        self.hp = 100;
+    }return self;
+}
+-(void)escolherArma {
+    NSLog(@"Escolha sua arma: (Bow, Sword, Sorcery, Axe");
+    char *tipoArma[50];
+    int nChar;
+    nChar = scanf("%50s", tipoArma);
+    NSString *n = [[NSString alloc]initWithCString:(char *)tipoArma encoding:NSStringEncodingConversionAllowLossy];
+    self.primario = [[NSClassFromString(n) alloc]init];
+}
+-(void)escolherSegundaArma {
+    NSLog(@"Escolha sua arma: (Bow, Sword, Sorcery, Axe");
+    char *tipoArma[50];
+    int nChar;
+    nChar = scanf("%50s", tipoArma);
+    NSString *n = [[NSString alloc]initWithCString:(char *)tipoArma encoding:NSStringEncodingConversionAllowLossy];
+    self.secondario = [[NSClassFromString(n) alloc]init];
+}
 
-static const int elfo = 1;
-static const int orc = 2;
-static const int humano = 3;
-static const int anao = 4;
+-(void)atacar:(Jogador *)inimigo {
+    inimigo.hp = [self.primario calculateStrengthAttack:inimigo];
+}
+-(void)defender {
+    
+}
+-(void)recuperar {
+    self.hp += 15;
+}
 
-@synthesize raca, vida;
-float vida = 1000;
--(id)QuaisArm{
-      int tipo = 0;
-    do{ // escolhe qual o tipo da primeira arma
-      
-    NSLog(@"Escolha o tipo de arma primaria:");
-    NSLog(@"1 - Arco Flecha");
-    NSLog(@"2 - Espada");
-    NSLog(@"3 - Machado");
-    NSLog(@"4 - Magia");
-        scanf("%d", &tipo);
-    }while (tipo < 1 || tipo > 4);
-    if (tipo == 1) {
-        armaPrimaria = [ArcoFlecha new];
-    }
-    else if (tipo == 2){
-        armaPrimaria = [Espada new];
-    }
-    else if (tipo == 3){
-        armaPrimaria = [Machado new];
-    }
-    else {
-        armaPrimaria = [Magia new];
-    }
-    do{ // escolhe qual tipo da segunda arma
+-(void)LevelUp{
+    self.exp=0;
+    self.expMax+=50;
+    
+    for(int i=3; i<0; i--){
+        Opcao escolha;
+        NSLog(@"Onde voce deseja coloca seu atributo bonus: \n(forca =0 , Destreza = 1 , Inteligencia = 2, Hp = 3) \n");
+        scanf ("%d", &escolha);
         
-        NSLog(@"Escolha o tipo de arma secundaria:");
-        NSLog(@"1 - Arco Flecha");
-        NSLog(@"2 - Espada");
-        NSLog(@"3 - Machado");
-        NSLog(@"4 - Magia");
-        scanf("%d", &tipo);
-    }while (tipo < 1 || tipo > 4);
-    
-    if (tipo == 1) {
-        armaSecundaria = [ArcoFlecha new];
-    }
-    else if (tipo == 2){
-        armaSecundaria = [Espada new];
-    }
-    else if (tipo == 3){
-        armaSecundaria = [Machado new];
-    }
-    else {
-        armaSecundaria = [Magia new];
-    }
-    
-    if([super init]){
-    return self;
-    }
-    return self;
+        if(escolha == Forca )
+            self.forca+=1;
+        else if(escolha == Destreza)
+            self.destreza+=1;
+        else if(escolha == Inteligencia)
+            self.inteligencia+=1;
+        else
+            self.hp+=10;
+ }
 }
-
--(id)Qualraca:(int) racam{ // escolhe raca
-    
-    switch (racam) {
-        case 1: raca = elfo; break;
-        case 2: raca = orc; break;
-        case 3: raca = humano; break;
-        case 4: raca = anao; break;
-        default:
-            NSLog(@"Numero de raca invalido");
-            break;
-    }
-    
-    if([super init]){
-        return self;
-    }
-    
-    return self;
-}
--(int)defesa: (int)cont{ //calculo de defesa
-    int defTot = 100 - cont;
-    if(raca == 1){ // Elfos
-        defTot += 10;
-    }
-    else if (raca == 2){ // Orcs
-        defTot += 5;
-    }
-    else if (raca == 3 || raca == 4){ //Humanos e Magos
-        defTot += 15;
-    }
-    return defTot;
-    
-}
--(float)ataque:(Jogador *)player contagem:(int)cont{
-    int arma;
-    int atak = 0;
-    do{
-    NSLog(@"Qual arma?: 1-Primaria 2- Secundaria");
-        scanf("%d", &arma);
-    }while ( arma < 1 || arma > 2);
-    if(arma == 1){
-        armaPrimaria.precisaoDeAtq = rand()%(40)+60;
-        atak = [armaPrimaria calcularForcaDeAtaque:player contagem:cont];
-        
-    }
-    else if (arma == 2){
-        armaSecundaria.precisaoDeAtq = (rand()%(40)+60)*0.8 ;
-        atak = [armaSecundaria calcularForcaDeAtaque:player contagem:cont];
-        
-    }
-    
-    return atak;
-   
-    
-}
-
--(float)sofreAtaque: (Jogador *)jogador forcaAgora:(double)forca contagem:(int)cont{
-    int defesa =[jogador defesa: cont];
-    vida = vida - (forca - defesa);
-    return vida;
-}
-
-
 @end

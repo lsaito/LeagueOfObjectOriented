@@ -1,34 +1,38 @@
 //
 //  Jogador.h
-//  LeagueOfOrientedObject
+//  League of oriented objective
 //
-//  Created by THALES AUGUSTO on 11/19/13.
-//  Copyright (c) 2013 THALES AUGUSTO. All rights reserved.
+//  Created by IGOR HENRIQUE on 11/19/13.
+//  Copyright (c) 2013 IGOR HENRIQUE. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-@class Arma;
-
-@interface Jogador : NSObject{
-    int elfo;
-    int orc;
-    int humano;
-    int anao;
-    NSString *nome;
-    int raca;
-    float vida;
-    int forcaEscudo;
-    Arma *armaPrimaria;
-    Arma *armaSecundaria;
-    
-}
-@property int raca;
-@property float vida;
--(id)QuaisArm;
--(id)Qualraca : (int)racam;
--(float)ataque: (Jogador *)player contagem: (int)cont;
--(float)sofreAtaque: (Arma *)armaUsada forcaAgora:(double)forca contagem:(int)cont;
--(int)defesa: (int)cont;
+#import "Weapon.h"
 
 
+@interface Jogador : NSObject
+@property (nonatomic,strong) NSString *nome;
+@property (nonatomic,strong) Weapon *primario;
+@property (nonatomic,strong) Weapon *secondario;
+@property (nonatomic) int level;
+@property (nonatomic) int hp;
+@property (nonatomic) int forca;
+@property (nonatomic) int destreza;
+@property (nonatomic) int inteligencia;
+@property (nonatomic) double dinheiro;
+@property (nonatomic) int defesa;
+@property (nonatomic) int exp;
+@property (nonatomic) int expMax;
+
+-(void)atacar:(Jogador *)inimigo;
+-(void)defender;
+-(void)recuperar;
+-(id)initWithNome:(NSString *)__nome;
+
+typedef enum:int{
+    Forca=0,
+    Destreza=1,
+    Inteligencia=2,
+    Hp=3
+}Opcao ;
 @end
