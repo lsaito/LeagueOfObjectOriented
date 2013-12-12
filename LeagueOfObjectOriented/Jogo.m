@@ -34,6 +34,7 @@
 -(void)loopGame {
     int r = arc4random()%5;
     self.t = [[Terreno alloc]initWithType:r];
+    [self GeradorDeInimigos];
     int randomP1 = arc4random()%2;
     while (self.p1.hp > 0) {
         if (randomP1 == 0) {
