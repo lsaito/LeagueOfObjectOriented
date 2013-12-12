@@ -27,6 +27,7 @@
 
 -(void)atacar:(Jogador *)inimigo;
 -(void)defender;
+-(void)escolherArma;
 -(void)recuperar;
 -(id)initWithNome:(NSString *)__nome;
 

@@ -65,7 +65,7 @@ static const int AIR = 3;
     return breaking;
 }
 - (double) calculateStrengthAttack : (Jogador *) character{
-    return 0.0;
+    return 10.0;
 }
 #pragma mark - Getter e Setter
 
