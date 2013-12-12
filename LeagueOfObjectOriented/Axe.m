@@ -35,18 +35,18 @@
         }else if([terrain tipo] == 3){ // castelo
              if([character isKindOfClass:[Humano class]]){
                  strengthAttack += ([character forca] / 20) *100;
-            }else if([character isKindOfClass:[Elfo class]]){
-                     strengthAttack += ([character forca] / 10) *100;
-            }else if([character isKindOfClass:[Anao class]]){
+        }else if([character isKindOfClass:[Elfo class]]){
+                 strengthAttack += ([character forca] / 10) *100;
+        }else if([character isKindOfClass:[Anao class]]){
                  strengthAttack += ([character forca] / 5) *100;
               }
         
-        }else if([terrain tipo] == 4){// pantano
+    }else if([terrain tipo] == 4){// pantano
         
-            if([character isKindOfClass:[Orc class]]){
-                strengthAttack += ([character forca] / 20) *100;
-            }
+        if([character isKindOfClass:[Orc class]]){
+            strengthAttack += ([character forca] / 20) *100;
         }
+    }
     
     
     
