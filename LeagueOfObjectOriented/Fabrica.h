@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "Weapon.h"
 @interface Fabrica : NSObject
--(Weapon *)retornarArma: (NSString *)_name powerAttack : (int)_powerAttack ;
+-(Weapon *)retornarArma: (NSString *)_name price : (double)_price element : (int)_element powerAttack : (int)_powerAttack precisionAttack : (int)_precisionAttack wear : (int)_wear reach : (int)_reach level : (int)_level;
 
 
 

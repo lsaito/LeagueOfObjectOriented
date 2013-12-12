@@ -9,34 +9,20 @@
 #import "Jogo.h"
 
 @implementation Jogo
-
-+(Jogo *)sharedJogo:(Jogador *)jog {
-    static Jogo *jogo = NULL;
-    if (!jogo) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            jogo = [[Jogo alloc] initWithJogador:jog];
-        });
-    }
-    return jogo;
-}
-
-
-
-
-
-
 -(id)initWithJogador:(Jogador *)__p1{
     self = [super init];
     
     if (self) {
         self.p1 = __p1;
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
     
     return self;
 =======
         NSLog(@"INICIALIZOU");
+=======
+>>>>>>> parent of 924db65... teste 2
     } return self;
 >>>>>>> 924db657658b8b0cf0e6e219c3e8e18614fa2f43
 }
