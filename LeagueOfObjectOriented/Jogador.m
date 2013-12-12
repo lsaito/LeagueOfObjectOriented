@@ -20,7 +20,7 @@
 }
 -(void)escolherArma {
     NSLog(@"Escolha sua arma: (Bow, Sword, Sorcery, Axe");
-    char *tipoArma[50];
+    char tipoArma[50];
     int nChar;
     nChar = scanf("%50s", tipoArma);
     NSString *n = [[NSString alloc]initWithCString:(char *)tipoArma encoding:NSStringEncodingConversionAllowLossy];
@@ -28,7 +28,7 @@
 }
 -(void)escolherSegundaArma {
     NSLog(@"Escolha sua arma: (Bow, Sword, Sorcery, Axe");
-    char *tipoArma[50];
+    char tipoArma[50];
     int nChar;
     nChar = scanf("%50s", tipoArma);
     NSString *n = [[NSString alloc]initWithCString:(char *)tipoArma encoding:NSStringEncodingConversionAllowLossy];
