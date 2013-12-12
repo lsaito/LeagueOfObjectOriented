@@ -22,6 +22,7 @@
 @property (nonatomic,strong) Terreno *t;
 
 -(id)initWithJogador:(Jogador *)__p1;
++(Jogo *)sharedJogo:(Jogador *)jog;
 
 typedef enum :int {
     FuncaoAtacar = 0,
