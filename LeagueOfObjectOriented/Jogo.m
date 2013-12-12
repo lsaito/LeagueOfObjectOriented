@@ -10,21 +10,9 @@
 
 @implementation Jogo
 -(id)initWithJogador:(Jogador *)__p1{
-    self = [super init];
-    
-    if (self) {
+    if (self = [super init]) {
         self.p1 = __p1;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    }
-    
-    return self;
-=======
-        NSLog(@"INICIALIZOU");
-=======
->>>>>>> parent of 924db65... teste 2
     } return self;
->>>>>>> 924db657658b8b0cf0e6e219c3e8e18614fa2f43
 }
 
 -(void)loopGame {
