@@ -7,20 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Command.h"
-#import "Bow.h"
-#import "Jogador.h"
-#import "Jogo.h"
 
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-
-        Jogador *jogad = [[Jogador alloc] initWithNome:@"Raçudo"];
-        Jogo *j = [Jogo sharedJogo:jogad];
-
+        
+        
     }
     return 0;
 }
