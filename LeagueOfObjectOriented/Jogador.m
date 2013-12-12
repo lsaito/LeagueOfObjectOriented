@@ -36,7 +36,7 @@
 }
 
 -(void)atacar:(Jogador *)inimigo {
-    inimigo.hp = [self.primario calculateStrengthAttack:inimigo];
+    inimigo.hp -= [self.primario calculateStrengthAttack:inimigo];
 }
 -(void)defender {
     

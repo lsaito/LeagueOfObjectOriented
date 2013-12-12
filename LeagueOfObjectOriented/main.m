@@ -15,7 +15,9 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         Jogador *jogad = [[Jogador alloc] initWithNome:@"Raçudo"];
+        [jogad escolherArma];
         Jogo *j = [Jogo sharedJogo:jogad];
+        [j loopGame];
 
 
         
