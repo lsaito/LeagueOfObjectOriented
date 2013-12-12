@@ -41,13 +41,6 @@
 #pragma mark - Getter e Setter
 
 @property NSString *name;
-@property double price;
-@property int element;
-@property int powerAttack;
-@property int precisionAttack;
-@property int wear;
-@property int reach;
-@property int level;
-@property BOOL usable;
+@property double attack;
 
 @end

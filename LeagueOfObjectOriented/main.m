@@ -10,6 +10,9 @@
 #import "Command.h"
 #import "Jogador.h"
 #import "Jogo.h"
+#import "Weapon.h"
+#import "WeaponFactory.h"
+#import "Bow.h"
 int main(int argc, const char * argv[])
 {
 
@@ -17,6 +20,8 @@ int main(int argc, const char * argv[])
         Jogador *jogador = [[Jogador alloc] initWithNome:@"Raçudo"];
         Jogo *j = [Jogo sharedJogoWIthJogador:jogador];
         [j loopGame];
+        
+        [WeaponFactory criarArmaWithTipo:[Bow class]];
         
     }
     return 0;
