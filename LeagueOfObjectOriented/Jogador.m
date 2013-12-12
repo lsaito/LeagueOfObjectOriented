@@ -36,16 +36,7 @@
 }
 
 -(void)atacar:(Jogador *)inimigo {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    inimigo.hp -= [self.primario calculateStrengthAttack:inimigo];
-=======
-    [[Command sharedCommand] adicionarAtaque:self andInimigo:inimigo];
-    
->>>>>>> 1820d5a774ed049353a78172e8ead42c8cc8ca2f
     inimigo.hp = [self.primario calculateStrengthAttack:inimigo];
->>>>>>> d3b08e0ceab925183d4a5bc1371076013ebcdc10
 }
 -(void)defender {
     

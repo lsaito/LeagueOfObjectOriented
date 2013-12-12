@@ -18,7 +18,6 @@
 -(void)loopGame {
     int r = arc4random()%5;
     self.t = [[Terreno alloc]initWithType:r];
-    [self GeradorDeInimigos];
     int randomP1 = arc4random()%2;
     while (self.p1.hp > 0) {
         if (randomP1 == 0) {
@@ -28,11 +27,8 @@
             [self escolherFuncao:self.Inimigo andInimigo:self.p1];
             randomP1=0;
         }
-        if(self.Inimigo.hp<0){
+        if(self.Inimigo.hp<0)
             [self GeradorDeInimigos];
-            NSLog(@"Matou");
-        }
-        
         
     }
 }
@@ -43,8 +39,6 @@
     if(inimigoRandomico==0) s = @"Orc"; else if (inimigoRandomico == 1) s = @"Humano"; else if (inimigoRandomico == 2) s = @"Anao"; else s = @"Elfo";
     
     self.Inimigo = [[NSClassFromString(s) alloc]initWithNome:s];
-    self.Inimigo.primario = [[Weapon alloc] init];
-    
         
 
 }
