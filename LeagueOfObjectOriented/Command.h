@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Jogador.h"
-
+@class Jogador;
 @interface Command : NSObject {
 }
 @property (nonatomic,strong)NSMutableArray *historico;
