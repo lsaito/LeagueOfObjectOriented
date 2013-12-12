@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Weapon.h"
-#import "Command.h"
-
 @class Weapon;
 
 
