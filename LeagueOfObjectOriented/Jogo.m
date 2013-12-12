@@ -10,13 +10,9 @@
 
 @implementation Jogo
 -(id)initWithJogador:(Jogador *)__p1{
-    self = [super init];
-    
-    if (self) {
+    if (self = [super init]) {
         self.p1 = __p1;
-    }
-    
-    return self;
+    } return self;
 }
 
 -(void)loopGame {
