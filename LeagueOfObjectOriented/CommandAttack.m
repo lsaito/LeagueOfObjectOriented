@@ -11,7 +11,11 @@
 @implementation CommandAttack
 -(id)initJogador:(Jogador *)j andInimigo:(Jogador *)inimigo{
     if (self = [super init]) {
+        _inimigoVidaInicial = inimigo.hp;
+        self.jogador = j;
+        self.inimigo = inimigo;
         inimigo.hp -= j.primario.attack;
+        _inimigoVidaFinal = inimigo.hp;
     } return self;
 }
 -(void)addToCommand {

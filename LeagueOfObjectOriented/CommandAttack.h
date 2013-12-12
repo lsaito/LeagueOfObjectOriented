@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 @class Jogador;
 @interface CommandAttack : NSObject
+@property (nonatomic,strong) Jogador *jogador;
+@property (nonatomic,strong) Jogador *inimigo;
+@property (nonatomic) int inimigoVidaInicial;
+@property (nonatomic) int inimigoVidaFinal;
 
 -(id)initJogador:(Jogador *)j andInimigo:(Jogador *)inimigo;
 -(void)addToCommand;

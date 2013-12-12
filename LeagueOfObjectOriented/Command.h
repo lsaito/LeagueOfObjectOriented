@@ -10,6 +10,7 @@
 @class Jogador;
 @class CommandAttack;
 @interface Command : NSObject {
+   
 }
 @property (nonatomic,strong)NSMutableArray *historico;
 +(Command *)sharedCommand ;
