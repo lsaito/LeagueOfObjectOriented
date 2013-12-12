@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 @class Weapon;
 @interface WeaponFactory : NSObject
-+(Weapon *)criarArmaWithTipo:(Class )__class;
++(Weapon *)criarArmaWithTipo:(NSString *)tipo;
 @end

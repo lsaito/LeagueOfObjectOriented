@@ -8,11 +8,26 @@
 
 #import "WeaponFactory.h"
 #import "Weapon.h"
-#import "Bow.h"
-#import "Axe.h"
+
 
 @implementation WeaponFactory
-+(Weapon *)criarArmaWithTipo:(Class )__class  {
-    return [[__class alloc] init];
++(Weapon *)criarArmaWithTipo:(NSString *)tipo {
+    if ([tipo isEqualToString:@"Bow"]) {
+        Weapon *w = [[NSClassFromString(tipo) alloc] init];
+        w.attack = 14;
+        w.name = @"Bow Real";
+         return w;
+    } else if ([tipo isEqualToString:@"Axe"]) {
+        Weapon *w = [[NSClassFromString(tipo) alloc] init];
+        w.attack = 90;
+        w.name = @"Axe Real";
+         return w;
+    } else if ([tipo isEqualToString:@"Sword"]) {
+        Weapon *w = [[NSClassFromString(tipo) alloc] init];
+        w.attack = 26;
+        w.name = @"Sword Real";
+        return w;
+    }
+    return nil;
 }
 @end

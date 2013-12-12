@@ -9,5 +9,9 @@
 #import "Bow.h"
 
 @implementation Bow
-
+-(id)init {
+    if (self = [super init]) {
+    
+    } return self;
+}
 @end

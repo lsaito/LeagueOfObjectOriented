@@ -18,8 +18,9 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         Jogador *jogador = [[Jogador alloc] initWithNome:@"Raçudo"];
-        Weapon *w = [WeaponFactory criarArmaWithTipo:[Bow class]];
+        Weapon *w = [WeaponFactory criarArmaWithTipo:@"Bow"];
         [jogador setPrimario:w];
+        
         Jogo *j = [Jogo sharedJogoWIthJogador:jogador];
         [j loopGame];
 
